@@ -1,0 +1,18 @@
+{
+	"requestID": "95d5a858-a285-4ccb-9380-8525064752d1",
+	"signature": {
+		"*": "*"
+	},
+	"errors": [{ 
+		"code": 1,		"msg": "ASX1077: Cannot find dataset cat q1.sqlp in dataverse Default nor an alias with name cat q1.sqlp! (in line 1, at column 1)"	} 
+	],
+	"status": "fatal",
+	"metrics": {
+		"elapsedTime": "3.8624ms",
+		"executionTime": "3.3938ms",
+		"resultCount": 0,
+		"resultSize": 0,
+		"processedObjects": 0,
+		"errorCount": 1
+	}
+}

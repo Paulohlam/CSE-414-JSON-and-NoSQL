@@ -1,0 +1,18 @@
+/*
+For each country, return its name, its population, and the number of religions sorted alphabetically by country. Report 0 religions for countries without religions. 
+
+Name your output attributes country, population, num_religions. 
+select from country, pop, and reiligion. If it has a religon, count the array, if there is nothing set as 0, finally last case is set to 1. order it by country name
+0.154 seconds 
+*/
+
+
+
+
+SELECT x.name as country, x.population as population, a as num_religions
+FROM world y, y.mondial.country x
+LET a = (CASE WHEN is_array(x.religions) THEN ARRAY_COUNT(x.religions)
+WHEN y.religions is missing THEN 0
+ELSE 1 END)
+ORDER BY x.name ASC;
+ 

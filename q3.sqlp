@@ -1,0 +1,17 @@
+/*
+For each religion return the number of countries where it occurs; order them in decreasing number of countries. 
+
+Name your output attributes religion, num_countries. 
+
+do text slection for religion. get num of countires with that religion by checking if arrau os religon then set to religion, then check if there is no religion then [] and then set as itself if only one relgion.
+
+0.138 seconds
+*/
+
+SELECT a.`#text` religion, COUNT(*) as num_countries
+FROM world x, x.mondial.country y,
+(CASE WHEN y.religions is missing THEN []
+WHEN is_array(y.religions) THEN y.religions
+ELSE [y.religions] END) a 
+GROUP BY a.`#text`
+ORDER BY count(*) desc;

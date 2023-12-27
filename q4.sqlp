@@ -1,0 +1,19 @@
+/*
+For each ethnic group, return the number of countries where it occurs, as well as the total population world-wide of that group. Hint: you need to multiply the ethnicity’s percentage with the country’s population. Use the functions float(x) and/or int(x) to convert a string to a float or to an int. 
+
+Name your output attributes ethnic_group, num_countries, total_population. You can leave your final total_population as a float if you like. 
+
+group by ethnic. get total population. Use float to covert to numbers.
+0.141 seconds 
+*/
+
+SELECT count(*) as num_countries, a.`#text` as ethnic_group, sum(float(a.`-percentage`) * float(y.population) / 100.0) as total_population
+FROM world x, x.mondial.country y,
+CASE WHEN y.ethnicgroups is missing THEN []
+WHEN is_array(y.ethnicgroups) THEN y.ethnicgroups
+ELSE [y.ethnicgroups] 
+END a
+GROUP BY a.`#text`;
+
+
+
